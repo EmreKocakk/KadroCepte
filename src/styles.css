@@ -1,0 +1,118 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * KPSS Atama Bildirimi design system.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 20px);
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 1rem;
+
+  /* #F4F5FB */
+  --background: oklch(0.9682 0.0067 286.3);
+  /* #1E1B4B */
+  --foreground: oklch(0.2568 0.0884 281.29);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.2568 0.0884 281.29);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.2568 0.0884 281.29);
+  /* #4F46E5 */
+  --primary: oklch(0.5106 0.2301 276.97);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.9682 0.0067 286.3);
+  --secondary-foreground: oklch(0.2568 0.0884 281.29);
+  --muted: oklch(0.9682 0.0067 286.3);
+  --muted-foreground: oklch(0.5 0.045 281.29);
+  /* #F59E0B */
+  --accent: oklch(0.7686 0.1647 70.08);
+  --accent-foreground: oklch(0.2568 0.0884 281.29);
+  --ink: oklch(0.2568 0.0884 281.29);
+  --ink-foreground: oklch(1 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.2568 0.0884 281.29 / 10%);
+  --input: oklch(0.2568 0.0884 281.29 / 12%);
+  --ring: oklch(0.5106 0.2301 276.97);
+}
+
+.dark {
+  --background: oklch(0.1892 0.055 281.29);
+  --foreground: oklch(0.97 0.008 286.3);
+  --card: oklch(0.2448 0.064 281.29);
+  --card-foreground: oklch(0.97 0.008 286.3);
+  --popover: oklch(0.2448 0.064 281.29);
+  --popover-foreground: oklch(0.97 0.008 286.3);
+  --primary: oklch(0.615 0.19 276.97);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.2448 0.064 281.29);
+  --secondary-foreground: oklch(0.97 0.008 286.3);
+  --muted: oklch(0.2448 0.064 281.29);
+  --muted-foreground: oklch(0.72 0.03 286.3);
+  --accent: oklch(0.7686 0.1647 70.08);
+  --accent-foreground: oklch(0.1892 0.055 281.29);
+  --ink: oklch(0.1362 0.045 281.29);
+  --ink-foreground: oklch(0.97 0.008 286.3);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.615 0.19 276.97);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
